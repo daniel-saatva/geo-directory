@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :map
+  resources :map, only: :index
   resources :users do
     collection do
       get "people"

@@ -76,7 +76,7 @@ class UsersController < ApplicationController
         },
         'geometry': {
           'type': 'Point',
-          'coordinates': [ u.location.lng, u.location.lat ]
+          'coordinates': [ u.location.lat, u.location.lng ]
         },
       }
     end
