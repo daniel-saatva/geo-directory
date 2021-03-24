@@ -6,9 +6,11 @@ let options = {
     minZoom:2,
     worldCopyJump: true,
 }
-let map = L.mapbox.map('map',undefined,options).setView([0.5286709, 27.2723167], 3);
+let map = L.mapbox.map('map',undefined,options).setView([24.849604,-113.0105373], 4);
 
 L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
     attribution: 'Team: GPerry, DValencia, DLourido',
 }).addTo(map);
 /* ** End map vars ******************************************************************/
+
+let featureLayer = L.mapbox.featureLayer().loadURL('/users/people').addTo(map);

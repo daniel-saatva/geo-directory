@@ -56,6 +56,33 @@ class UsersController < ApplicationController
     end
   end
 
+  def people
+    @people_json = {
+      'type': 'FeatureCollection',
+      'features': []
+    }
+    users = User.includes(:location, :tags)
+    @people_json['features'] = users.map do |u|
+      {
+        'type': 'Feature',
+        'properties': {
+          'name': "#{u.firstname} #{u.lastname}",
+          'country_name': u.location.country,
+          'country_iso': u.location.country,
+          'city_name': u.location.city,
+          'photo_url': './icon_male.png',
+          'skills': u.tags.map(&:name),
+          'level': 'advanced'
+        },
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [ u.location.lng, u.location.lat ]
+        },
+      }
+    end
+    render json: @people_json and return
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
