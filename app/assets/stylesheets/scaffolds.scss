@@ -1,7 +1,6 @@
 body {
   background-color: #fff;
-  color: #333;
-  margin: 33px; }
+  color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -63,3 +62,6 @@ div.actions {
 
 label {
   display: block; }
+
+.container{
+  min-width: 98vw !important; }
