@@ -1,0 +1,45 @@
+firstname,lastname,role,squad,email,phone,birth_date,start_date,lat,lng,country,city
+Kris,Brower,CTO,,kris@saatvamattress.com,610-812-5749,4/18/2021,1/18/2010,30.401080288005474, -97.76717264254225,USA,Austin
+Henry,Jiang,TA,Support,henry@saatvamattress.com,646-583-9427,1/7/2021,11/23/2015,30.401080288005474, -97.76717264254225,USA,Austin
+Taylor,Rush,Dev,Growth,trush@saatvamattress.com,409-543-7357,7/10/2021,11/13/2017,30.401080288005474, -97.76717264254225,USA,Austin
+Meredith,Parr,Tech Lead,Shoppé,mparr@saatvamattress.com,512-517-0306,11/15/2021,1/15/2018,30.401080288005474, -97.76717264254225,USA,Austin
+Chris,Miller,Dev,Support,cmiller@saatvamattress.com,419-709-5815,10/10/2021,3/5/2018,30.401080288005474, -97.76717264254225,USA,Austin
+Jeff,Pinkston,Dev,Merchant Services,jpinkston@saatvamattress.com,512-468-7101,8/25/2021,5/14/2018,30.401080288005474, -97.76717264254225,USA,Austin
+Scott,Harger,VP,,sharger@saatvamattress.com,512-785-2465,4/10/2021,7/16/2018,30.401080288005474, -97.76717264254225,USA,Austin
+Jay,Posten,Dev,Buy & Own,jposten@saatvamattress.com,361-945-0085,1/21/2021,11/12/2018,30.401080288005474, -97.76717264254225,USA,Austin
+Megan,King,Dev,Shoppé,mking@saatvamattress.com,512-221-3775,9/5/2021,11/26/2018,30.401080288005474, -97.76717264254225,USA,Austin
+Daniel,DeRossette,Dev,Supply Chain,dderossette@saatvamattress.com,409-656-5347,11/15/2021,11/26/2018,30.401080288005474, -97.76717264254225,USA,Austin
+Justin,Lim,QA,Quality,jlim@saatvamattress.com,512-203-4303,6/15/2021,1/1/2019,30.401080288005474, -97.76717264254225,USA,Austin
+Peter,Dorfman,Dev,Merchant Services,pdorfman@saatvamattress.com,954-415-7215,5/1/2021,1/7/2019,30.401080288005474, -97.76717264254225,USA,Austin
+Sean,Verhaagen,Dev,Buy & Own,sverhaagen@saatvamattress.com,808-639-6017,9/6/2021,7/29/2019,30.401080288005474, -97.76717264254225,USA,Austin
+John,Barnhart,Data Eng,Data,jbarnhart@saatvamattress.com,512-992-4644,5/13/2021,8/26/2019,30.401080288005474, -97.76717264254225,USA,Austin
+Alexander,Yeghiazarian,TA,Support,alex.y@saatvamattress.com,917-770-1058,12/4/2021,11/4/2019,30.401080288005474, -97.76717264254225,USA,Austin
+Tad,Smith,Data Eng,Data,ismith@saatvamattress.com,765-438-3280,09/05/2021,2/10/2020,30.401080288005474, -97.76717264254225,USA,Austin
+Zachary,Livingston,Dev,Finance,zlivingston@saatvamattress.com,512-539-7633,1/10/2021,3/2/2020,30.401080288005474, -97.76717264254225,USA,Austin
+Jason,Stromberg,Dev,Finance,jstromberg@saatvamattress.com,956-607-4771,11/29/2021,7/6/2020,30.401080288005474, -97.76717264254225,USA,Austin
+Jimmy,Garita,Dev,Finance,jgarita@saatvamattress.com,011 506 83163448,5/15/2021,8/6/2020,9.839664973541103, -83.86603018614761,CRI,Paraiso
+Abraham,Carvajal,Dev,Buy & Own,acarvajal@saatvamattress.com,011 506 88810538,8/23/2021,8/25/2020,10.46968656688861, -84.64279177929951,CRI,Fortuna
+Luis,Gonzalez,QA,Quality,lgonzalez@saatvamattress.com,011 506 87073431,4/11/2021,9/15/2020,10.604586119845408, -84.4132472946444,CRI,San Carlos
+Julián,Rodríguez,Dev,Growth,jrodriguez@saatvamattress.com,011 57 3164930906,10/4/2021,10/5/2020,6.253072180427679, -75.57778103007824,COL,Medellín
+James,Summers,Dev,Shoppé,jsummers@saatvamattress.com,512-968-8937,8/9/2021,10/5/2020,30.401080288005474, -97.76717264254225,USA,Austin
+Wilmar,Muñoz,DevOps,DevOps,wmunoz@saatvamattress.com,011 57 3178871737,10/19/2021,10/14/2020,6.152008885679545, -75.61673434130546,COL,Sabaneta
+Daniel,Valencia,Dev,Supply Chain,dvalencia@saatvamattress.com,011 57 3117719956,1/25/2021,11/3/2020,5.06629986681392, -75.4984086412418,COL,Manizales
+Giuliannie,Perry,Dev,Finance,gperry@saatvamattress.com,011 506 88879698,08/03/2021,11/16/2020,9.945010784825309, -84.0323263858446,CRI,Sabanilla
+Philip,Leicht,Architect,,pleicht@saatvamattress.com,281-382-8849,4/28/2021,11/16/2020,30.401080288005474, -97.76717264254225,USA,Austin
+Derlyn,Lourido,Dev,Merchant Services,dlourido@saatvamattress.com,011 57 3016917870,2/04/2021,12/3/2020,3.5354395917778225, -76.30091930451951,COL,Palmira
+Jhon,Melendez,Dev,Merchant Services,jmelendez@saatvamattress.com,011 57 3013471306,5/2/2021,2/1/2021,7.114435196699414, -73.12748552266466,COL,Bucaramanga
+Alejandro,Figueroa,Data Eng,Data,dfigueroa@saatvamattress.com,011 57 3102067882,7/26/2021,2/8/2021,5.73113142782531, -72.92335773863847,COL,Sogamoso
+David,Alvarez,DevOps,DevOps,dalvarez@saatvamattress.com,011 506 88497045,12/3/2021,2/15/2021,9.936891066561454, -84.11300445885287,CRI,San Jose
+Gabriel,Pereira,Dev,Shoppé,gpereira@saatvamattress.com,011 506 86536559,04/19/2021,2/22/2021,9.863338371748895, -83.9184952881216,CRI,Cartago
+Gal,Moshe,Dev,Supply Chain,gmoshe@saatvamattress.com,512-638-1175,5/7/2021,2/22/2021,30.401080288005474, -97.76717264254225,USA,Austin
+Adalberto,Cubillo,Data Eng,Data,acubillo@saatvamattress.com,011 506 8893-7262,8/14/2021,2/22/2021,10.604586119845408, -84.4132472946444,CRI,San Carlos
+Marcelo,Soffredi,Manager,,msoffredi@saatvamattress.com,512-416-8530,11/9/2021,3/1/2021,30.401080288005474, -97.76717264254225,USA,Austin
+Robbie,Sternenberg,DevOps,DevOps,rsternenberg@saatvamattress.com,512-923-1596,9/6/2021,3/1/2021,30.401080288005474, -97.76717264254225,USA,Austin
+Robert,Nicholas,DevOps,DevOps,rnicholas@saatvamattress.com,804-386-6351,10/14/2021,3/1/2021,30.401080288005474, -97.76717264254225,USA,Austin
+Manfred,Marin,Dev,Shoppé,mmarin@saatvamattress.com,011 506 70039017,09/01/2021,3/8/2021,9.863338371748895, -83.9184952881216,CRI,Cartago
+Alex 'AJ',Norton,Dev,Merchant Services,anorton@saatvamattress.com,571-405-0833,02/18/2021,3/8/2021,30.401080288005474, -97.76717264254225,USA,Austin
+Edlly,Gomez,QA,Quality,egomez@saatvamattress.com,011 506 72708939,08/18/2021,3/22/2021,9.8661002358696, -84.09412748179348,CRI,Aserri
+Annie,Hsieh,Manager,,ahsieh@saatvamattress.com,512-669-8296,,4/5/2021,30.401080288005474, -97.76717264254225,USA,Austin
+Jeffry,Gutierrez,Dev,Merchant Services,jgutierrez@saatvamattress.com,011 506,,4/6/2021,9.936891066561454, -84.11300445885287,CRI,San Jose
+Elena,Rojas,Dev,Buy & Own,erojas@saatvamattress.com,011 506,,4/19/2021,9.936891066561454, -84.11300445885287,CRI,San Jose
+Carlos,Chacon,Dev,,cchacon@saatvamattress.com,011 506,,5/4/2021,9.945010784825309, -84.0323263858446,CRI,Sabanilla

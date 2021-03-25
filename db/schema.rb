@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_171119) do
+ActiveRecord::Schema.define(version: 2021_03_25_145240) do
 
   create_table "locations", force: :cascade do |t|
     t.float "lat", null: false
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2021_03_24_171119) do
     t.string "city"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["lat", "lng"], name: "index_locations_on_lat_and_lng", unique: true
+  end
+
+  create_table "squads", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_squads_on_name", unique: true
   end
 
   create_table "tags", force: :cascade do |t|
@@ -43,7 +51,12 @@ ActiveRecord::Schema.define(version: 2021_03_24_171119) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "location_id"
+    t.string "email", null: false
+    t.integer "squad_id"
+    t.string "role"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "users", "locations"
+  add_foreign_key "users", "squads"
 end
