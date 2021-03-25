@@ -22,12 +22,35 @@
 <div class="modal" tabindex="-1" id="people_info">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="people_name"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <div class="image-flip">
+          <div class="mainflip">
+            <div class="frontside" id="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="/assets/icon_female.png" alt="card image"></p>
+                  <h4 class="card-title people_name"></h4>
+                  <p class="card-text" id="people_tags">asd</p>
+                </div>
+              </div>
+            </div>
+            <div class="backside" id="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title people_name"></h4>
+                  <p class="card-text" id="info">
+                    <span id="people_birth_date"></span>
+                    <i class="fa fa-envelope"></i> <span id="people_email"></span><br/>
+                    <i class="fa fa-phone"></i> <span id="people_phone"></span><br/>
+                    <span id="people_squad"></span>
+                    <i class="fa fa-user-tag"></i> <span id="people_role"></span><br/>
+                    <i class="fa fa-calendar-alt"></i> <span id="people_start_date"></span><br/>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -61,7 +61,7 @@ class UsersController < ApplicationController
       'type': 'FeatureCollection',
       'features': []
     }
-    users = User.includes(:location, :tags)
+    users = User.includes(:location, :tags, :squad)
     @people_json['features'] = users.map do |u|
       {
         'type': 'Feature',
@@ -70,9 +70,14 @@ class UsersController < ApplicationController
           'country_name': u.location.country,
           'country_iso': u.location.country,
           'city_name': u.location.city,
+          'email': u.email,
+          'phone': u.phone,
+          'start_date': u.start_date,
+          'birth_date': u.birth_date,
+          'squad': u.squad&.name,
+          'role': u.role,
           'photo_url': './icon_male.png',
-          'skills': u.tags.map(&:name),
-          'level': 'advanced'
+          'skills': u.tags.map(&:name)
         },
         'geometry': {
           'type': 'Point',
