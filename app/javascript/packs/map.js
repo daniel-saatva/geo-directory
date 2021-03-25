@@ -6,7 +6,7 @@ const options = {
     minZoom:2,
     worldCopyJump: true,
 }
-let map = L.mapbox.map('map',undefined,options).setView([24.849604,-113.0105373], 4);
+let map = L.mapbox.map('map',undefined,options).setView([20.3911177,-84.042094], 4);
 
 L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
     attribution: 'Team: GPerry, DValencia, DLourido',
@@ -29,7 +29,7 @@ function controlLayer() {
     layers.eachLayer(function(layer) {
         new L.marker(
             layer.feature.geometry.coordinates,
-            {icon: new L.Icon({ iconSize: [45, 45], iconUrl: layer.feature.properties.photo_url || '/assets/icon_female.png', className: "circle-image" , iconAnchor:[30, 15]})}
+            {icon: new L.Icon({ iconSize: [45, 45], iconUrl: layer.feature.properties.photo_url || '/assets/avatar.png', className: "circle-image" , iconAnchor:[30, 30]})}
         ).addTo(clusterGroup)
             .on('click', function(e){ updateModalInfo(layer.feature.properties)});
     });
@@ -42,7 +42,7 @@ function updateModalInfo(props){
     }
 
     let profilePicture = document.getElementById('profile-picture');
-    profilePicture.src= props.photo_url || '/assets/icon_female.png';
+    profilePicture.src= props.photo_url || '/assets/avatar.png';
 
     let email = document.getElementById('people_email');
     email.innerHTML = props.email;
