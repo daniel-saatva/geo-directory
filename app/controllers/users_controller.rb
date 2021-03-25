@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.includes(:location)
+    @locations = Location.all
   end
 
   # GET /users/1 or /users/1.json
@@ -13,10 +14,14 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @locations = Location.all
+    @squads = Squad.all
   end
 
   # GET /users/1/edit
   def edit
+    @locations = Location.all
+    @squads = Squad.all
   end
 
   # POST /users or /users.json
@@ -76,7 +81,7 @@ class UsersController < ApplicationController
           'birth_date': u.birth_date,
           'squad': u.squad&.name,
           'role': u.role,
-          'photo_url': './icon_male.png',
+          'photo_url': u.image.attached? ? rails_blob_path(u.image, only_path: true) : nil ,
           'skills': u.tags.map(&:name)
         },
         'geometry': {
@@ -96,6 +101,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:firstname, :lastname, :phone, :birth_date, :start_date, :linkedin_url, :image)
+      params.require(:user).permit(:firstname, :lastname, :email, :role, :phone, :birth_date, :start_date, :linkedin_url, :image, :location_id, :squad_id)
     end
 end

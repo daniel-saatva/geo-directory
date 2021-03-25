@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% if @user.image.attached? %>
+  <img src="<%=  (url_for(@user.image))%>">
+<% end %>
 <p>
   <strong>Firstname:</strong>
   <%= @user.firstname %>

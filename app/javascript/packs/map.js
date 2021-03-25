@@ -29,7 +29,7 @@ function controlLayer() {
     layers.eachLayer(function(layer) {
         new L.marker(
             layer.feature.geometry.coordinates,
-            {icon: new L.Icon({ iconSize: [35, 35], iconUrl: '/assets/icon_female.png', iconAnchor:[30, 15]})}
+            {icon: new L.Icon({ iconSize: [45, 45], iconUrl: layer.feature.properties.photo_url || '/assets/icon_female.png', className: "circle-image" , iconAnchor:[30, 15]})}
         ).addTo(clusterGroup)
             .on('click', function(e){ updateModalInfo(layer.feature.properties)});
     });
@@ -40,6 +40,9 @@ function updateModalInfo(props){
     for (let element of names) {
         element.innerHTML = props.name
     }
+
+    let profilePicture = document.getElementById('profile-picture');
+    profilePicture.src= props.photo_url || '/assets/icon_female.png';
 
     let email = document.getElementById('people_email');
     email.innerHTML = props.email;

@@ -2,6 +2,13 @@
 
 <h1>Users</h1>
 
+<select class="form-select" aria-label="Default select example">
+  <option selected>Select a city</option>
+  <% @locations.each do |location| %>
+    <option value="<% location.id %>"><%= "#{location.city}, #{location.country}" %></option>
+  <% end %>
+</select>
+
 <table class="table table-striped">
   <thead>
     <tr>
