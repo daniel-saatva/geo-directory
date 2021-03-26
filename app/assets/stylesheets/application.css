@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+/* card */
+.card-text.info {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: justify !important;
+    width: 20%;
+}
+
+/* Form */
+.form-container {
+    margin: 0 auto;
+    width: 50%;
+}

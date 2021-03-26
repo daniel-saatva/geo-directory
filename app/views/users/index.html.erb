@@ -2,14 +2,14 @@
 
 <h1>Users</h1>
 
-<select class="form-select" aria-label="Default select example">
+<!--<select class="form-select" aria-label="Default select example">
   <option selected>Select a city</option>
-  <% @locations.each do |location| %>
-    <option value="<% location.id %>"><%= "#{location.city}, #{location.country}" %></option>
-  <% end %>
-</select>
+  <%# @locations.each do |location| %>
+    <option value="<%# location.id %>"><%#= "#{location.city}, #{location.country}" %></option>
+  <%# end %>
+</select>-->
 
-<table class="table table-striped">
+<table class="table table-striped" id="users-table">
   <thead>
     <tr>
       <th>Firstname</th>
@@ -33,9 +33,11 @@
         <td><%= user.start_date %></td>
         <td><%= user.linkedin_url %></td>
         <td><%= user.location.city %></td>
-        <td><%= link_to 'Show', user,class:"btn btn-primary text-white"%></td>
-        <td><%= link_to 'Edit', edit_user_path(user),class:"btn btn-warning text-white" %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger text-white" %></td>
+        <td>
+          <%= link_to 'Show', user,class:"btn btn-primary text-white"%> |
+          <%= link_to 'Edit', edit_user_path(user),class:"btn btn-info text-white" %> |
+          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger text-white" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -44,3 +46,9 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
+<script>
+  $(document).ready(()=>{
+      $('#users-table').DataTable();
+  })
+</script>

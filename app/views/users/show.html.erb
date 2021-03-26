@@ -1,37 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="card text-center">
 
-<% if @user.image.attached? %>
-  <img src="<%=  (url_for(@user.image))%>">
-<% end %>
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
+  <div class="card-body">
+    <% if @user.image.attached? %>
+      <img src="<%=  (url_for(@user.image))%>", class="circle-image">
+    <% end %>
+    <h5 class="card-title"><%= @user.firstname %> <%= @user.lastname %></h5>
+    <p class="card-text info">
+      <% @user.tags.each do |tag| %>
+        <span class="btn btn-sm btn-primary"><%= tag.name %></span>
+      <% end %>
+    </p>
+    <p class="card-text info">
+      <i class="fa fa-envelope bold"></i> <span><%= @user.email %></span><br/>
+      <i class="fa fa-phone bold"></i> <span><%= @user.phone %></span><br/>
+      <i class="fa fa-user-tag bold"></i> <span><%= @user.role %></span><br/>
+      <i class="fa fa-calendar-alt bold"></i> <span><%= @user.start_date %></span><br/>
+      <% if @user.birth_date %>
+        <i class="fa fa-birthday-cake bold"></i> <span><%= @user.birth_date %></span><br/>
+      <% end %>
+      <% if @user.squad %>
+        <i class="fa fa-users bold"></i> <span><%= @user.squad.name %></span><br/>
+      <% end %>
+    </p>
+    <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary text-white"%> |
+    <%= link_to 'Back', users_path, class: "btn btn-secondary text-white"%>
+  </div>
+</div>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>Birth date:</strong>
-  <%= @user.birth_date %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @user.start_date %>
-</p>
-
-<p>
-  <strong>Linkedin url:</strong>
-  <%= @user.linkedin_url %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
