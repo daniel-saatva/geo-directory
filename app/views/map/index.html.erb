@@ -40,8 +40,8 @@
       </div>
       <% @squads.each do |squad| %>
       <div class="form-check col-md-4 col-sm-12">
-        <input type="checkbox" class="form-check-input" name="squad" id="<%= squad.name %>" value="<%= squad.name %>" checked>
-        <label for="<%= squad.name %>"><%= squad.name %></label>
+        <input type="checkbox" class="form-check-input" name="squad" id="s<%= squad.name %>" value="<%= squad.name %>" checked>
+        <label for="s<%= squad.name %>"><%= squad.name %></label>
       </div>
       <% end %>
       <div class="form-check col-md-4 col-sm-12 border-top p-t-5">
@@ -55,8 +55,8 @@
     <div class="row">
       <% @roles.each do |role| %>
         <div class="form-check col-md-4 col-sm-12">
-          <input type="checkbox" class="form-check-input" name="role" id="<%= role %>" value="<%= role %>" checked>
-          <label for="<%= role %>"><%= role %></label>
+          <input type="checkbox" class="form-check-input" name="role" id="r<%= role %>" value="<%= role %>" checked>
+          <label for="r<%= role %>"><%= role %></label>
         </div>
       <% end %>
       <div class="form-check col-md-4 col-sm-12 border-top p-t-5">
