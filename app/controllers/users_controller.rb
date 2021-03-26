@@ -71,6 +71,7 @@ class UsersController < ApplicationController
       {
         'type': 'Feature',
         'properties': {
+          'id': u.id,
           'name': "#{u.firstname} #{u.lastname}",
           'country_name': u.location.country,
           'country_iso': u.location.country,

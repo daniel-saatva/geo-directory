@@ -13,6 +13,35 @@ L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
 }).addTo(map);
 /* ** End map vars ******************************************************************/
 
+// Onchange controller
+let countryCheckboxes = document.querySelectorAll("input[name='country']");
+countryCheckboxes.forEach(element => element.onchange = function() { controlLayer() });
+
+let squadCheckboxes = document.querySelectorAll("input[name='squad']");
+squadCheckboxes.forEach(element => element.onchange = function() { controlLayer() });
+
+let roleCheckboxes = document.querySelectorAll("input[name='role']");
+roleCheckboxes.forEach(element => element.onchange = function() { controlLayer() });
+// -------------------
+
+let countryFilters = [], squadFilters = [], roleFilter = [];
+
+function updateFilters(){
+    countryFilters = [];
+    let countryCheckboxes = document.querySelectorAll("input[name='country']");
+    countryCheckboxes.forEach(element => element.checked && countryFilters.push(element.value));
+
+    roleFilters = [];
+    let roleCheckboxes = document.querySelectorAll("input[name='role']");
+    roleCheckboxes.forEach(element => element.checked && roleFilters.push(element.value));
+
+    squadFilters = [];
+    let squadCheckboxes = document.querySelectorAll("input[name='squad']");
+    squadCheckboxes.forEach(element =>  element.checked && squadFilters.push(element.value));
+    document.getElementById('none').checked && squadFilters.push(null);
+
+}
+
 let layerPeopleGroup = new L.layerGroup().addTo(map);
 let layers;
 
@@ -25,17 +54,27 @@ L.mapbox.featureLayer()
 
 function controlLayer() {
     layerPeopleGroup.clearLayers();
+    updateFilters();
+
     let clusterGroup = new L.MarkerClusterGroup().addTo(layerPeopleGroup);
     layers.eachLayer(function(layer) {
-        new L.marker(
-            layer.feature.geometry.coordinates,
-            {icon: new L.Icon({ iconSize: [45, 45], iconUrl: layer.feature.properties.photo_url || '/assets/avatar.png', className: "circle-image" , iconAnchor:[30, 30]})}
-        ).addTo(clusterGroup)
-            .on('click', function(e){ updateModalInfo(layer.feature.properties)});
+
+        if(countryFilters.indexOf(layer.feature.properties.country_iso) !== -1
+            && squadFilters.indexOf(layer.feature.properties.squad) !== -1
+            && roleFilters.indexOf(layer.feature.properties.role) !== -1){
+            new L.marker(
+                layer.feature.geometry.coordinates,
+                {icon: new L.Icon({ iconSize: [45, 45], iconUrl: layer.feature.properties.photo_url || '/assets/avatar.png', className: "circle-image" , iconAnchor:[30, 30]})}
+            ).addTo(clusterGroup)
+                .on('click', function(e){ updateModalInfo(layer.feature.properties)});
+        }
     });
 }
 
 function updateModalInfo(props){
+    let link = document.getElementById('people_link');
+    link.href = '/users/' + props.id;
+
     let names = document.getElementsByClassName('people_name');
     for (let element of names) {
         element.innerHTML = props.name
@@ -73,9 +112,4 @@ function updateModalInfo(props){
         keyboard: false
     });
     modal.show();
-}
-
-function toggleSides(){
-    let backSide = document.getElementById('backside');
-
 }
