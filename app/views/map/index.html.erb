@@ -15,6 +15,50 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js'></script>
 <% end %>
 <br>
+<div class="row">
+  <div class="col-lg-2 col-md-3 col-sm-4">
+    <h6>Country</h6>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" name="country" id="USA" value="USA" checked>
+      <label for="USA">USA</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" name="country" id="COL" value="COL" checked>
+      <label for="COL">COL</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" name="country" id="CRI" value="CRI" checked>
+      <label for="CRI">CRI</label>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <h6>Squad</h6>
+    <div class="row">
+      <div class="form-check col-md-4 col-sm-12">
+        <input type="checkbox" class="form-check-input" name="squad" id="none" value="null" checked>
+        <label for="none">None</label>
+      </div>
+      <% @squads.each do |squad| %>
+      <div class="form-check col-md-4 col-sm-12">
+        <input type="checkbox" class="form-check-input" name="squad" id="<%= squad.name %>" value="<%= squad.name %>" checked>
+        <label for="<%= squad.name %>"><%= squad.name %></label>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    Role
+    <div class="row">
+      <% @roles.each do |role| %>
+        <div class="form-check col-md-4 col-sm-12">
+          <input type="checkbox" class="form-check-input" name="role" id="<%= role %>" value="<%= role %>" checked>
+          <label for="<%= role %>"><%= role %></label>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
 <div class="mapGrid">
   <div class="map" id="map"></div>
 </div>
@@ -46,6 +90,7 @@
                     <i class="fa fa-user-tag"></i> <span id="people_role"></span><br/>
                     <i class="fa fa-calendar-alt"></i> <span id="people_start_date"></span><br/>
                   </p>
+                  <a href="#" id="people_link" target="_blank" class="btn btn-primary text-white">Show</a>
                 </div>
               </div>
             </div>
