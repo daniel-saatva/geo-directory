@@ -29,7 +29,7 @@ function controlLayer() {
     layers.eachLayer(function(layer) {
         new L.marker(
             layer.feature.geometry.coordinates,
-            {icon: new L.Icon({ iconSize: [45, 45], iconUrl: layer.feature.properties.photo_url || '/assets/avatar.png', className: "circle-image" , iconAnchor:[30, 30]})}
+            {icon: new L.Icon({ iconSize: [45, 45], iconUrl: layer.feature.properties.photo_url || '/assets/avatar.png', className: "circle-image", iconAnchor:[30, 30]})}
         ).addTo(clusterGroup)
             .on('click', function(e){ updateModalInfo(layer.feature.properties)});
     });
