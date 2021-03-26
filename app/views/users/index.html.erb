@@ -17,9 +17,10 @@
       <th>Phone</th>
       <th>Birth date</th>
       <th>Start date</th>
-      <th>Linkedin url</th>
+      <th>Squad</th>
+      <th>Role</th>
       <th>City</th>
-      <th colspan="3">Options</th>
+      <th>Options</th>
     </tr>
   </thead>
 
@@ -31,8 +32,9 @@
         <td><%= user.phone %></td>
         <td><%= user.birth_date %></td>
         <td><%= user.start_date %></td>
-        <td><%= user.linkedin_url %></td>
-        <td><%= user.location.city %></td>
+        <td><%= user.squad ? user.squad.name : 'none' %></td>
+        <td><%= user.role %></td>
+        <td><%= "#{user.location.city}, #{user.location.country}" %></td>
         <td>
           <%= link_to 'Show', user,class:"btn btn-primary text-white"%> |
           <%= link_to 'Edit', edit_user_path(user),class:"btn btn-info text-white" %> |
@@ -41,8 +43,8 @@
       </tr>
     <% end %>
   </tbody>
+  </tfoot>
 </table>
-
 <br>
 
 <%= link_to 'New User', new_user_path %>
