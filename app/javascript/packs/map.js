@@ -22,6 +22,26 @@ squadCheckboxes.forEach(element => element.onchange = function() { controlLayer(
 
 let roleCheckboxes = document.querySelectorAll("input[name='role']");
 roleCheckboxes.forEach(element => element.onchange = function() { controlLayer() });
+
+let allSquadControl = document.getElementById('all_squad');
+allSquadControl.onchange = function() {
+    if(allSquadControl.checked){
+        squadCheckboxes.forEach(element => element.checked = true );
+    }else{
+        squadCheckboxes.forEach(element => element.checked = false );
+    }
+    controlLayer();
+};
+
+let allRoleControl = document.getElementById('all_role');
+allRoleControl.onchange = function() {
+    if(allRoleControl.checked){
+        roleCheckboxes.forEach(element => element.checked = true );
+    }else{
+        roleCheckboxes.forEach(element => element.checked = false );
+    }
+    controlLayer();
+};
 // -------------------
 
 let countryFilters = [], squadFilters = [], roleFilter = [];
