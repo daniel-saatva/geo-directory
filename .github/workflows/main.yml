@@ -12,6 +12,6 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Rubocop checks
-      uses: andrewmcodes-archive/rubocop-linter-action@v3.3.0
+      uses: gimenete/rubocop-action@1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
