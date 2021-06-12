@@ -1,17 +1,17 @@
 # Worflow example
-name: CI
+name: Rubocop
 on:
   pull_request:
     branches: [ master ]
 
 jobs:
-  build:
+  rubocop-test:
     runs-on: ubuntu-latest
     steps:
 
     - uses: actions/checkout@v1
 
-    - name: Rubocop checks
-      uses: reviewdog/action-rubocop@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Install Rubocop gem
+      run: gem install rubocop
+    - name: Run Rubocop
+      run: bundle exec rubocop
