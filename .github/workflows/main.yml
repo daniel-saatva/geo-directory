@@ -15,3 +15,5 @@ jobs:
       run: gem install rubocop
     - name: Run Rubocop
       run: bundle exec rubocop
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
